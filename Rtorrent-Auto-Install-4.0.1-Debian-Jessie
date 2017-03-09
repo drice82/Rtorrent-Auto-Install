@@ -803,6 +803,11 @@ function INSTALL_RUTORRENT {
 	# Changing permissions for rutorrent and plugins.
 	chown -R www-data.www-data /var/www/html/rutorrent
 	chmod -R 775 /var/www/html/rutorrent
+	
+	cd /var/www/html/
+	wget https://release.larsjung.de/h5ai/h5ai-0.29.0.zip
+	unzip h5ai-0.29.0.zip
+	ln -sv /home/ptuser/Downloads/ /var/www/html/
 }
 
 # Function for configuring apache
