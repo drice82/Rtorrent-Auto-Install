@@ -79,8 +79,8 @@ function SET_RTORRENT_USER {
 	adduser --disabled-login $RTORRENT_USER
 	con=0
 	while [ $con -eq 0 ]; do
-		echo -n "Please type a valid system user: "
-		read RTORRENT_USER
+#		echo -n "Please type a valid system user: "
+#		read RTORRENT_USER
 
 		if [[ -z $(cat /etc/passwd | grep "^$RTORRENT_USER:") ]]; then
 			echo
@@ -101,8 +101,8 @@ function SET_RTORRENT_USER {
 # Function to  create users for the webinterface
 function SET_WEB_USER {
 	while true; do
-		echo -n "Please type the username for the webinterface, system user not required: "
-		read WEB_USER
+#		echo -n "Please type the username for the webinterface, system user not required: "
+#		read WEB_USER
 		USER=$(htpasswd -n $WEB_USER 2>/dev/null)
 		if [ $? = 0 ]; then
 			WEB_USER_ARRAY+=($USER)
