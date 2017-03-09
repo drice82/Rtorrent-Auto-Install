@@ -836,13 +836,17 @@ function CONFIGURE_APACHE {
     ErrorLog /var/log/apache2/rutorrent_error.log
     SCGIMount /rutorrent/RPC2 127.0.0.1:5000
 
-    <Directory "/var/www/html/rutorrent">
+    <Directory "/var/www/html">
         AuthName "Tits or GTFO"
         AuthType Basic
         Require valid-user
         AuthUserFile /var/www/html/rutorrent/.htpasswd
     </Directory>
-
+    
+    <Directory "/var/www/html/Downloads">
+	php_flag engine off
+    </Directory>
+    DirectoryIndex  index.php  /_h5ai/public/index.php
 </VirtualHost>
 
 # vim: syntax=apache ts=4 sw=4 sts=4 sr noet
