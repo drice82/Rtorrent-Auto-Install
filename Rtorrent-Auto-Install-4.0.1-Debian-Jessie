@@ -1,7 +1,6 @@
 #!/bin/bash
 # PLEASE DO NOT SET ANY OF THE VARIABLES, THEY WILL BE POPULATED IN THE MENU
-apt-get update
-apt-get -y install curl
+
 clear
 
 # Formatting variables
@@ -29,7 +28,11 @@ PLUGIN_ARRAY=()
 
 #rTorrent users home dir.
 HOMEDIR=""
-
+#Initial
+function INITIAL {
+	apt-get update
+	apt-get -y install curl
+}
 # Function to check if running user is root
 function CHECK_ROOT {
 	if [ "$(id -u)" != "0" ]; then
@@ -805,7 +808,10 @@ function INSTALL_RUTORRENT {
 	# Changing permissions for rutorrent and plugins.
 	chown -R www-data.www-data /var/www/html/rutorrent
 	chmod -R 775 /var/www/html/rutorrent
-	
+		
+}
+#Install H5ai and webui
+function INSTALL_WEBUI {
 	# Download H5ai 
 	cd /var/www/html/
 	wget https://release.larsjung.de/h5ai/h5ai-0.29.0.zip
@@ -819,7 +825,6 @@ function INSTALL_RUTORRENT {
 	wget https://github.com/drice82/Rtorrent-Auto-Install/raw/master/web/explorer.png
 	wget https://github.com/drice82/Rtorrent-Auto-Install/raw/master/web/recharge.png
 	wget https://github.com/drice82/Rtorrent-Auto-Install/raw/master/web/utorrent.png
-	
 }
 
 # Function for configuring apache
@@ -956,6 +961,7 @@ function START_RTORRENT {
 	systemctl start rtorrent.service	
 }
 
+INITIAL
 CHECK_ROOT
 LICENSE
 APACHE_UTILS
@@ -1004,6 +1010,7 @@ while true; do
 			APT_DEPENDENCIES
 			INSTALL_RTORRENT
 			INSTALL_RUTORRENT
+			INSTALL_WEBUI
 			CONFIGURE_APACHE
 			INSTALL_SYSTEMD_SERVICE
 			START_RTORRENT
