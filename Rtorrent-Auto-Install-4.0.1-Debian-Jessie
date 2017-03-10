@@ -1,5 +1,7 @@
 #!/bin/bash
 # PLEASE DO NOT SET ANY OF THE VARIABLES, THEY WILL BE POPULATED IN THE MENU
+apt-get update
+apt-get -y install curl
 clear
 
 # Formatting variables
