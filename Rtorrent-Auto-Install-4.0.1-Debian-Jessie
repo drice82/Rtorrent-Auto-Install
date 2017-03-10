@@ -811,8 +811,13 @@ function INSTALL_RUTORRENT {
 	ln -sv /home/ptuser/Downloads/ /var/www/html/
 	
 	#Download index web
-	wget https://github.com/drice82/Rtorrent-Auto-Install/raw/master/Files/web.zip
-	unzip web.zip
+	wget https://github.com/drice82/Rtorrent-Auto-Install/raw/master/web/index.htm
+	wget https://github.com/drice82/Rtorrent-Auto-Install/raw/master/web/css
+	wget https://github.com/drice82/Rtorrent-Auto-Install/raw/master/web/style.css
+	wget https://github.com/drice82/Rtorrent-Auto-Install/raw/master/web/explorer.png
+	wget https://github.com/drice82/Rtorrent-Auto-Install/raw/master/web/recharge.png
+	wget https://github.com/drice82/Rtorrent-Auto-Install/raw/master/web/utorrent.png
+	
 }
 
 # Function for configuring apache
