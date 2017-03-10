@@ -804,10 +804,15 @@ function INSTALL_RUTORRENT {
 	chown -R www-data.www-data /var/www/html/rutorrent
 	chmod -R 775 /var/www/html/rutorrent
 	
+	# Download H5ai 
 	cd /var/www/html/
 	wget https://release.larsjung.de/h5ai/h5ai-0.29.0.zip
 	unzip h5ai-0.29.0.zip
 	ln -sv /home/ptuser/Downloads/ /var/www/html/
+	
+	#Download index web
+	wget https://github.com/drice82/Rtorrent-Auto-Install/raw/master/Files/web.zip
+	unzip web.zip
 }
 
 # Function for configuring apache
@@ -852,7 +857,7 @@ function CONFIGURE_APACHE {
     <Directory "/var/www/html/Downloads">
 	php_flag engine off
     </Directory>
-    DirectoryIndex  index.html index.php  /_h5ai/public/index.php
+    DirectoryIndex  index.htm index.php  /_h5ai/public/index.php
 </VirtualHost>
 
 # vim: syntax=apache ts=4 sw=4 sts=4 sr noet
