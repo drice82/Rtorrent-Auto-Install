@@ -692,7 +692,7 @@ function SELECT_PLUGINS {
 				echo "${GREEN}DOWNLOAD_PLUGIN${NORMAL}"
 				if DOWNLOAD_PLUGIN ; then
 					mv /tmp/plugins/* $TEMP_PLUGIN_DIR
-					INSTALL_FFMPEG
+					#INSTALL_FFMPEG
 					apt-get -y install php5-geoip curl libzen0 libmediainfo0 mediainfo unrar-free
 				fi
 				;;
@@ -1011,6 +1011,7 @@ while true; do
 			INSTALL_RTORRENT
 			INSTALL_RUTORRENT
 			INSTALL_WEBUI
+			INSTALL_FFMPEG
 			CONFIGURE_APACHE
 			INSTALL_SYSTEMD_SERVICE
 			START_RTORRENT
