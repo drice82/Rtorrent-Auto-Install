@@ -709,6 +709,9 @@ function SELECT_PLUGINS {
 
 # Function for installing dependencies
 function APT_DEPENDENCIES {
+	echo "deb http://packages.dotdeb.org wheezy-php56 all" >> /etc/apt/sources.list.d/dotdeb.list
+	echo "deb-src http://packages.dotdeb.org wheezy-php56 all" >> /etc/apt/sources.list.d/dotdeb.list
+	wget http://www.dotdeb.org/dotdeb.gpg -O- | apt-key add - 
 	apt-get update
 	apt-get -y install openssl git apache2 apache2-utils build-essential libsigc++-2.0-dev \
 	libcurl4-openssl-dev automake libtool libcppunit-dev libncurses5-dev libapache2-mod-scgi \
