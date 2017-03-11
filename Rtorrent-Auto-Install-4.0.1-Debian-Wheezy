@@ -32,6 +32,7 @@ HOMEDIR=""
 function INITIAL {
 	apt-get update
 	apt-get install curl
+	adduser --disabled-login $RTORRENT_USER
 }
 
 # Function to check if running user is root
