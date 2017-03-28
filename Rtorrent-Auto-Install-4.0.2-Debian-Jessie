@@ -739,9 +739,9 @@ function INSTALL_RTORRENT {
 	cd rtorrent
 
 	# Download and install libtorrent
-	curl -L http://rtorrent.net/downloads/libtorrent-0.13.6.tar.gz -o libtorrent.tar.gz
+	curl -L http://rtorrent.net/downloads/libtorrent-0.13.3.tar.gz -o libtorrent.tar.gz
 	tar -zxvf libtorrent.tar.gz
-	cd libtorrent-0.13.6
+	cd libtorrent-0.13.3
 	./autogen.sh
 	./configure
 	make
