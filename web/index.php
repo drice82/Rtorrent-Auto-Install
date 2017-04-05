@@ -36,7 +36,6 @@
 
 <section>
 <img src="./recharge.png">
-<img src="./recharge.png">
 <div>
 <h2>Recharge</h2>
 <p><a href="http://senlinpay.com/api.php?uid=100001917&payno=xjb64@163.com&price=0.1&title=<?PHP echo $username; ?>" target="_blank">充值</a></p>
