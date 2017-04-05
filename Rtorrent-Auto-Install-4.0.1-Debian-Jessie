@@ -819,7 +819,8 @@ function INSTALL_WEBUI {
 	ln -sv /home/ptuser/Downloads/ /var/www/html/
 	
 	#Download index web
-	wget https://github.com/drice82/Rtorrent-Auto-Install/raw/master/web/index.htm
+	wget https://github.com/drice82/Rtorrent-Auto-Install/raw/master/web/index.php
+	wget https://github.com/drice82/Rtorrent-Auto-Install/raw/master/web/inc.php
 	wget https://github.com/drice82/Rtorrent-Auto-Install/raw/master/web/css
 	wget https://github.com/drice82/Rtorrent-Auto-Install/raw/master/web/style.css
 	wget https://github.com/drice82/Rtorrent-Auto-Install/raw/master/web/explorer.png
