@@ -39,7 +39,29 @@
 <img src="./recharge.png">
 <div>
 <h2>Recharge</h2>
-<p><a href="https://www.google.com/" target="_blank">充值缴费</a></p>
+<p><a href="http://senlinpay.com/api.php?uid=100001917&payno=xjb64@163.com&price=0.1&title=<?PHP echo $username; ?>" target="_blank">充值</a></p>
+<?php
+$con = mysql_connect($sqlhost,$sqluser,$sqlpwd);
+if (!$con)
+  {
+  die('Could not connect: ' . mysql_error());
+  }
+
+mysql_select_db($sqldb, $con);
+
+$result = mysql_query("SELECT * FROM members WHERE username=$username");
+
+while($row = mysql_fetch_array($result))
+  {
+  echo "到期日:";
+  echo date('Y-m-d',$row['expire_time']);
+  echo "<br />";
+  }
+
+mysql_close($con);
+
+?>
+  
 </div>
 </section>
 </main>
