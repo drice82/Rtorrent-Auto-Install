@@ -60,7 +60,8 @@ while($row = mysql_fetch_array($result))
 mysql_close($con);
 
 ?>
-  
+<p><a href="http://www.lazypt.co/" target="_blank">修改密码</a></p>
+
 </div>
 </section>
 </main>
