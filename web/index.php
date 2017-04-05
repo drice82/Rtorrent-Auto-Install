@@ -1,4 +1,24 @@
 <?php include "inc.php";?>
+
+<?php
+$con = mysql_connect($sqlhost,$sqluser,$sqlpwd);
+if (!$con)
+  {
+  die('Could not connect: ' . mysql_error());
+  }
+
+mysql_select_db($sqldb, $con);
+
+$result = mysql_query("SELECT * FROM members WHERE username=$username");
+$price=mysql_fetch_array($result)['price'];
+
+$result = mysql_query("SELECT * FROM members WHERE username=$username");
+$expire_time=mysql_fetch_array($result)['expire_time'];
+mysql_close($con);
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en_US">
 
@@ -38,28 +58,18 @@
 <img src="./recharge.png">
 <div>
 <h2>Recharge</h2>
-<p><a href="http://senlinpay.com/api.php?uid=100001917&payno=xjb64@163.com&price=0.1&title=<?PHP echo $username; ?>" target="_blank">充值</a></p>
+
 <?php
-$con = mysql_connect($sqlhost,$sqluser,$sqlpwd);
-if (!$con)
-  {
-  die('Could not connect: ' . mysql_error());
-  }
-
-mysql_select_db($sqldb, $con);
-
-$result = mysql_query("SELECT * FROM members WHERE username=$username");
-
-while($row = mysql_fetch_array($result))
-  {
   echo "到期日:";
-  echo date('Y-m-d',$row['expire_time']);
+  echo date('Y-m-d',$expire_time);
   echo "<br />";
-  }
-
-mysql_close($con);
 
 ?>
+
+<p><a href="http://senlinpay.com/api.php?
+<?php echo "uid=".$uid."&payno=".$payno."&price=".$price."&title=".$username; ?>
+" target="_blank">充值</a></p>
+
 <p><a href="http://www.lazypt.co/" target="_blank">修改密码</a></p>
 
 </div>
