@@ -66,9 +66,14 @@ mysql_close($con);
 
 ?>
 
-<p><a href="http://senlinpay.com/api.php?
-<?php echo "uid=".$uid."&payno=".$payno."&price=".$price."&title=".$username; ?>
-" target="_blank">充值</a></p>
+<?php
+echo '<form name="alipaypay" method="post" accept-charset="gbk" action="http://senlinpay.com/api.php">';
+echo '<input type="hidden" name="uid" value="'.$uid.'">';
+echo '<input type="hidden" name="payno" value="'.$payno.'">';
+echo '<input type="hidden" name="price" value="'.$price.'">';
+echo '<input type="hidden" name="title" value="'.$username.'">';
+echo '<input type="submit" value="OK"></form>';
+?>
 
 <p><a href="http://www.lazypt.co/" target="_blank">修改密码</a></p>
 
