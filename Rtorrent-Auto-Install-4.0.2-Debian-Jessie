@@ -715,7 +715,7 @@ function APT_DEPENDENCIES {
 	apt-get update
 	apt-get -y install openssl git apache2 apache2-utils build-essential libsigc++-2.0-dev \
 	libcurl4-openssl-dev automake libtool libcppunit-dev libncurses5-dev libapache2-mod-scgi \
-	php5 php5-curl php5-cli libapache2-mod-php5 tmux unzip libssl-dev curl
+	php5 php5-curl php5-cli libapache2-mod-php5 tmux unzip libssl-dev curl php5-mysqlnd
 }
 
 # Function for setting up xmlrpc, libtorrent and rtorrent
