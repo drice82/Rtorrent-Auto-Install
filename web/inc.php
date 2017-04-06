@@ -1,9 +1,0 @@
-<?php
-$sqlhost='localhost';
-$sqluser='root';
-$sqlpwd='';
-$sqldb='lazy';
-$username='10001';
-$uid=100000000;
-$payno='sdf@163.com';
-?>
