@@ -73,7 +73,7 @@ echo '<input type="hidden" name="title" value="'.$username.'">';
 echo '<input type="submit" value="充值一个月"></form>';
 ?>
 
-<p><a href="http://www.lazypt.co/" target="_blank">修改密码</a></p>
+<p><a href="http://pt.lazypt.co/" target="_blank">修改密码</a></p>
 
 </div>
 </section>
