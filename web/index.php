@@ -62,17 +62,15 @@ mysql_close($con);
 <?php
   echo "到期日:";
   echo date('Y-m-d',$expire_time);
-  echo "<br />";
-
 ?>
 
 <?php
-echo '<form name="alipaypay" method="post" accept-charset="gbk" action="http://senlinpay.com/api.php">';
+echo '<form name="alipaypay" method="post" accept-charset="gbk" action="http://senlinpay.com/api.php" target="_black">';
 echo '<input type="hidden" name="uid" value="'.$uid.'">';
 echo '<input type="hidden" name="payno" value="'.$payno.'">';
 echo '<input type="hidden" name="price" value="'.$price.'">';
 echo '<input type="hidden" name="title" value="'.$username.'">';
-echo '<input type="submit" value="OK"></form>';
+echo '<input type="submit" value="充值一个月"></form>';
 ?>
 
 <p><a href="http://www.lazypt.co/" target="_blank">修改密码</a></p>
