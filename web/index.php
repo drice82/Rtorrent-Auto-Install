@@ -1,22 +1,31 @@
-<?php include "inc.php";?>
+<?php
+$sqlhost='localhost';
+$sqluser='root';
+$sqlpwd='';
+$sqldb='';
+$username='10001';
+$uid=;
+$payno='';
+?>
 
 <?php
-$con = mysql_connect($sqlhost,$sqluser,$sqlpwd);
-if (!$con)
-  {
-  die('Could not connect: ' . mysql_error());
-  }
+$mysqli = new mysqli("$sqlhost", "$sqluser", "$sqlpwd", "$sqldb");
+if (mysqli_connect_errno()){
+    printf("ERROR: %s\n", mysqli_connect_error());
+    $mysqli=null;
+    exit;
+}
+$query="SELECT * FROM members WHERE username=$username";
+$result=$mysqli->query($query);
+$row = $result->fetch_array();
+$price=$row['price'];
+$expire_time=$row['expire_time'];
 
-mysql_select_db($sqldb, $con);
-
-$result = mysql_query("SELECT * FROM members WHERE username=$username");
-$price=mysql_fetch_array($result)['price'];
-
-$result = mysql_query("SELECT * FROM members WHERE username=$username");
-$expire_time=mysql_fetch_array($result)['expire_time'];
-mysql_close($con);
+$result->free();
+$mysqli->close();
 
 ?>
+
 
 
 <!DOCTYPE html>
