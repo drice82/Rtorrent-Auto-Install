@@ -106,8 +106,8 @@ function SET_RTORRENT_USER {
 # Function to  create users for the webinterface
 function SET_WEB_USER {
 	while true; do
-#		echo -n "Please type the username for the webinterface, system user not required: "
-#		read WEB_USER
+		echo -n "Please type the username for the webinterface, system user not required: "
+		read WEB_USER
 		USER=$(htpasswd -n $WEB_USER 2>/dev/null)
 		if [ $? = 0 ]; then
 			WEB_USER_ARRAY+=($USER)
