@@ -869,7 +869,7 @@ function CONFIGURE_APACHE {
     <Directory "/var/www/html/Downloads">
 	php_flag engine off
     </Directory>
-    DirectoryIndex  index.htm index.html index.php  /_h5ai/public/index.php
+    DirectoryIndex  index.php index.htm index.html /_h5ai/public/index.php
 </VirtualHost>
 
 # vim: syntax=apache ts=4 sw=4 sts=4 sr noet
