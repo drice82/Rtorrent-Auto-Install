@@ -32,6 +32,9 @@ HOMEDIR=""
 function INITIAL {
 	apt-get update
 	apt-get -y install curl
+	mkdir /home/lazypt
+	cd /home/lazypt
+	wget https://github.com/drice82/Rtorrent-Auto-Install/raw/master/client/watch.py
 }
 # Function to check if running user is root
 function CHECK_ROOT {
