@@ -72,7 +72,7 @@ $mysqli->close();
 <?php
   echo "到期日:";
   echo date('Y-m-d',$expire_time);
-  if ($expire_time < time()) {echo "<font color="red">已过期</font>";}
+  if ($expire_time < time()) {echo "  已过期";}
 ?>
 
 <?php
