@@ -72,7 +72,7 @@ $mysqli->close();
 <?php
   echo "到期日:";
   echo date('Y-m-d',$expire_time);
-  if ($expire_time < time()) {echo "  已过期";}
+  if (($expire_time-time())<604800) {echo "  请即使续费";}
 ?>
 
 <?php
@@ -91,7 +91,7 @@ echo '<input type="submit" value="充值30天"></form>';
 </main>
 
 <footer>
-<p>©2016 - 2017 <br> <a href="http://ip100.info/">IP100.info</a> | <a href="https://www.google.com/">Blog</a> | <a href="https://www.google.com">Google</a></p>
+<p>©2016 - 2017 <br> <a href="http://www.lazypt.co/">雷击霹雳</a></p>
 </footer>
 </body>
 </html>
