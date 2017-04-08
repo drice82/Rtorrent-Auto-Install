@@ -20,7 +20,7 @@ $result=$mysqli->query($query);
 $row = $result->fetch_array();
 $price=$row['price'];
 $expire_time=$row['expire_time'];
-
+$email=$row['email'];
 $result->free();
 $mysqli->close();
 
@@ -51,7 +51,8 @@ $mysqli->close();
 <img src="./utorrent.png">
 <div>
 <h2>RuTorrent</h2>
-<p><a href="./rutorrent/">PT下载工具</a></p>
+    <p>SeedBox IP: <?php echo $email; ?>
+    <p><a href="./rutorrent/">PT下载工具</a></p>
 </div>
 </section>
 
@@ -71,6 +72,7 @@ $mysqli->close();
 <?php
   echo "到期日:";
   echo date('Y-m-d',$expire_time);
+  if ($expire_time < time()) {echo "<font color="red">已过期</font>";}
 ?>
 
 <?php
@@ -79,7 +81,7 @@ echo '<input type="hidden" name="uid" value="'.$uid.'">';
 echo '<input type="hidden" name="payno" value="'.$payno.'">';
 echo '<input type="hidden" name="price" value="'.$price.'">';
 echo '<input type="hidden" name="title" value="'.$username.'">';
-echo '<input type="submit" value="充值一个月"></form>';
+echo '<input type="submit" value="充值30天"></form>';
 ?>
 
 <p><a href="http://pt.lazypt.co/" target="_blank">修改密码</a></p>
