@@ -43,7 +43,7 @@ $mysqli->close();
 <body>
 <header>
 <h1>LazyPT</h1>
-<p>Enjoy PT!</p>
+<p><a href="http://www.lazypt.co/">lazypt.co</a>雷击霹雳</p>
 </header>
 
 <main>
