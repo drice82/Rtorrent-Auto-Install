@@ -72,7 +72,7 @@ $mysqli->close();
 <?php
   echo "到期日:";
   echo date('Y-m-d',$expire_time);
-  if (($expire_time-time())<604800) {echo "  请即使续费";}
+  if (($expire_time-time())<604800) {echo "  请及时续费";}
 ?>
 
 <?php
