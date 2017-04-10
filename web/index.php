@@ -11,7 +11,7 @@ $payno='';
 <?php
 $mysqli = new mysqli("$sqlhost", "$sqluser", "$sqlpwd", "$sqldb");
 if (mysqli_connect_errno()){
-    printf("ERROR: %s\n", mysqli_connect_error());
+    echo '<p><a href="./rutorrent/">PT下载工具</a></p>';
     $mysqli=null;
     exit;
 }
