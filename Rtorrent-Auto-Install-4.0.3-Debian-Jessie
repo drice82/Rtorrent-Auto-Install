@@ -31,7 +31,7 @@ HOMEDIR=""
 #Initial
 function INITIAL {
 	apt-get update
-	apt-get -y install curl
+	apt-get -y install curl wget nano
 	mkdir /home/lazypt
 	cd /home/lazypt
 	wget https://github.com/drice82/Rtorrent-Auto-Install/raw/master/client/watch.py
