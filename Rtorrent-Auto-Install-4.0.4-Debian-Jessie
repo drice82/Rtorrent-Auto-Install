@@ -898,6 +898,9 @@ function INSTALL_FFMPEG {
 
 # Function for showing the end result when install is complete
 function INSTALL_COMPLETE {
+	cd /var/www/html/rutorrent/conf
+	rm config.php
+	wget --no-check-certificate https://github.com/drice82/Rtorrent-Auto-Install/raw/master/Files/config.php
 	rm -rf $TEMP_PLUGIN_DIR
 
 	HEADER
