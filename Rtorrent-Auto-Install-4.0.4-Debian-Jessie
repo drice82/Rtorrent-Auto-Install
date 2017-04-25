@@ -992,7 +992,7 @@ else
     rm rarlinux.tar.gz
 fi
 
-mv -v rar/rar_static /usr/local/bin/rar
+mv -v rar/rar /usr/local/bin/rar
 chmod 755 /usr/local/bin/rar
 
 
