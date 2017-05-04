@@ -4,8 +4,6 @@ $sqluser='root';
 $sqlpwd='';
 $sqldb='';
 $username='10001';
-$uid=;
-$payno='';
 ?>
 
 <?php
@@ -43,7 +41,7 @@ $mysqli->close();
 <body>
 <header>
 <h1>LazyPT</h1>
-<p><a href="http://www.lazypt.co/">lazypt.co</a>-雷击霹雳</p>
+<p><a href="http://www.lazypt.net/">lazypt.net</a>-雷击霹雳</p>
 </header>
 
 <main>
@@ -71,18 +69,17 @@ $mysqli->close();
 
 <?php
   echo "到期日:";
-  echo date('Y-m-d',$expire_time);
+  echo date("Y-m-d H:i:s",$expire_time);
   if (($expire_time-time())<604800) {echo "  请及时续费";}
 ?>
 
-<?php
-echo '<form name="alipaypay" method="post" accept-charset="gbk" action="http://senlinpay.com/api.php" target="_black">';
-echo '<input type="hidden" name="uid" value="'.$uid.'">';
-echo '<input type="hidden" name="payno" value="'.$payno.'">';
-echo '<input type="hidden" name="price" value="'.$price.'">';
-echo '<input type="hidden" name="title" value="'.$username.'">';
-echo '<input type="submit" value="充值30天"></form>';
-?>
+<form action="http://www.lazypt.net/pay/shanpay.php" method="post">
+<input type="hidden" name="WIDout_trade_no" value="SO<?PHP echo time().mt_rand(100000,999999).$username ?>"/>
+<input type="hidden" name="WIDsubject" value="seedbox"/>
+<input type="hidden" name="WIDtotal_fee" value="<?PHP echo $price;?>"/>
+<input type="hidden" name="WIDbody" value="seedbox"/>
+<button type="submit" value="Submit">Submit</button>
+</form>
 
 <p><a href="http://pt.lazypt.co/" target="_blank">修改密码</a></p>
 
@@ -91,7 +88,7 @@ echo '<input type="submit" value="充值30天"></form>';
 </main>
 
 <footer>
-<p>©2016 - 2017 <br> <a href="http://www.lazypt.co/">雷击霹雳</a></p>
+<p>©2016 - 2017 <br> <a href="http://www.lazypt.net/">雷击霹雳</a></p>
 </footer>
 </body>
 </html>
