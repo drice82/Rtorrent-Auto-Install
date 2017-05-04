@@ -78,7 +78,7 @@ $mysqli->close();
 <input type="hidden" name="WIDsubject" value="seedbox"/>
 <input type="hidden" name="WIDtotal_fee" value="<?PHP echo $price;?>"/>
 <input type="hidden" name="WIDbody" value="seedbox"/>
-<button type="submit" value="Submit">Submit</button>
+<button type="submit" value="Submit">续费30天</button>
 </form>
 
 <p><a href="http://pt.lazypt.co/" target="_blank">修改密码</a></p>
