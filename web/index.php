@@ -51,6 +51,7 @@ $mysqli->close();
 <h2>RuTorrent</h2>
     <p>SeedBox IP: <?php echo $email; ?>
     <p><a href="./rutorrent/">PT下载工具</a></p>
+    <p><a href="http://pt.lazypt.co/" target="_blank">修改密码</a></p>
 </div>
 </section>
 
@@ -80,8 +81,6 @@ $mysqli->close();
 <input type="hidden" name="WIDbody" value="seedbox"/>
 <button type="submit" value="Submit">续费30天</button>
 </form>
-
-<p><a href="http://pt.lazypt.co/" target="_blank">修改密码</a></p>
 
 </div>
 </section>
