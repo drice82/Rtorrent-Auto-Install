@@ -75,7 +75,7 @@ $mysqli->close();
 ?>
 
 <form action="http://www.lazypt.net/pay/shanpay.php" method="post">
-<input type="hidden" name="WIDout_trade_no" value="SO<?PHP echo time().mt_rand(100000,999999).$username ?>"/>
+<input type="hidden" name="WIDout_trade_no" value="RE<?PHP echo time().mt_rand(10000000000,99999999999).$username ?>"/>
 <input type="hidden" name="WIDsubject" value="seedbox"/>
 <input type="hidden" name="WIDtotal_fee" value="<?PHP echo $price;?>"/>
 <input type="hidden" name="WIDbody" value="seedbox"/>
