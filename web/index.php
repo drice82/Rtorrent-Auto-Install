@@ -74,7 +74,7 @@ $mysqli->close();
   if (($expire_time-time())<604800) {echo "  请及时续费";}
 ?>
 
-<form action="http://www.lazypt.net/pay/shanpay.php" method="post">
+<form action="http://www.lazypt.net/pay/shanpay.php" method="post" target="_blank">
 <input type="hidden" name="WIDout_trade_no" value="RE<?PHP echo time().mt_rand(10000000000,99999999999).$username ?>"/>
 <input type="hidden" name="WIDsubject" value="seedbox"/>
 <input type="hidden" name="WIDtotal_fee" value="<?PHP echo $price;?>"/>
