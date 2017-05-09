@@ -5,7 +5,7 @@ now = int(time.time())
 #password
 chars=string.ascii_letters+string.digits
 randpwd=''.join([random.choice(chars) for i in range(8)])
-print randpwd
+
 #connect database
 db = MySQLdb.connect("host","root",'pass',"db") 
 cursor = db.cursor()
