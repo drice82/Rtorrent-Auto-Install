@@ -4,7 +4,7 @@ import MySQLdb, time, random, string
 now = int(time.time())
 #password
 chars=string.ascii_letters+string.digits
-randpwd=''.join([random.choice(chars) for i in range(length)])
+randpwd=''.join([random.choice(chars) for i in range(8)])
 print randpwd
 #connect database
 db = MySQLdb.connect("host","root",'pass',"db") 
@@ -17,8 +17,8 @@ try:
     for row in results:
         username = row[0]
         expire_time = row[2]
-        if expire_time < now:
-            sql = "UPDATE members SET enable=0 WHERE username='%s'" %(username)
+        if (expire_time < now and enable !=0):
+            sql = "UPDATE members SET enable=0, password='%s' WHERE username='%s'" %(randpwd, username)
             try:
                 cursor.execute(sql)
                 db.commit()
