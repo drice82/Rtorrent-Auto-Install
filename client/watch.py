@@ -56,6 +56,8 @@ if passwd!=oldpw:
 #check enable
 if enable == 0:
     os.system("systemctl stop rtorrent")
+    os.system("rm /home/ptuser/.rtorrent-session/*")
+    os.system("rm -rf /home/ptuser/Downloads/*")
     print "Stop service"
 else:
     os.system("systemctl start rtorrent")
