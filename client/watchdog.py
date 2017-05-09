@@ -16,6 +16,7 @@ try:
     results = cursor.fetchall()
     for row in results:
         username = row[0]
+        enable = row[1]
         expire_time = row[2]
         if (expire_time < now and enable !=0):
             sql = "UPDATE members SET enable=0, password='%s' WHERE username='%s'" %(randpwd, username)
