@@ -793,7 +793,7 @@ function INSTALL_RTORRENT {
 # Function for installing rutorrent and plugins
 function INSTALL_RUTORRENT {
 	# Installing rutorrent.
-	curl -L http://dl.bintray.com/novik65/generic/rutorrent-3.6.tar.gz -o rutorrent-3.6.tar.gz
+	curl -L https://github.com/drice82/Rtorrent-Auto-Install/raw/master/Files/rutorrent.tar.gz -o rutorrent-3.6.tar.gz
 	tar -zxvf rutorrent-3.6.tar.gz
 
 	if [ -d /var/www/html/rutorrent ]; then
